@@ -226,7 +226,7 @@ def scan_sql_injection(url: str) -> False or str or None:
         new_url = f"{url}{char}"
         print("[!] Trying", new_url)
 
-        # Делаем HTTP запрос
+        # Делаем HTTP запрос с отловом ошибок
         try:
             res = s.get(new_url)
         except:
