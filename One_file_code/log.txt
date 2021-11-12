@@ -1,0 +1,4 @@
+[URL Уязвим] >> http://testphp.vulnweb.com/artists.php?artist=1
+[URL Уязвим] >> http://www.programmallp.it/index.php?id_cnt=678
+[URL Уязвим] >> http://www.programmallp.it/index.php?id_cnt=678
+[URL Уязвим] >> http://testphp.vulnweb.com/artists.php?artist=1
