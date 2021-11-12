@@ -140,7 +140,7 @@ class Widget(QWidget):
 def main() -> None:
     app = QApplication(sys.argv)
 
-    window = Widget(output_file="./log.txt")
+    window = Widget(output_file="./logs/log.txt")
 
     window.setWindowIcon(QIcon("./src/logo.jpg"))
     window.setWindowTitle("SQLI Tester")
