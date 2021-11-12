@@ -46,9 +46,6 @@ class Ui_Widget(object):
         Widget.setMaximumSize(QSize(350, 150))
         Widget.setFocusPolicy(Qt.ClickFocus)
         Widget.setAcceptDrops(False)
-        icon = QIcon()
-        icon.addFile(u"src/logo.ico", QSize(), QIcon.Normal, QIcon.Off)
-        Widget.setWindowIcon(icon)
         Widget.setAutoFillBackground(True)
         self.progressBar = QProgressBar(Widget)
         self.progressBar.setObjectName(u"progressBar")
@@ -393,7 +390,6 @@ def main() -> None:
 
     window = Widget(output_file="./log.txt")
 
-    window.setWindowIcon(QIcon("./logo.jpg"))
     window.setWindowTitle("SQLI Tester")
 
     window.show()
