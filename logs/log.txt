@@ -1,0 +1,8 @@
+[Vulnerable] >> [Error-based] >> http://testphp.vulnweb.com/artists.php?artist=1
+[Vulnerable] >>  [Time-based] >> http://testphp.vulnweb.com/artists.php?artist=1
+[Vulnerable] >> [Error-based] >> http://www.programmallp.it/index.php?id_cnt=678
+[Vulnerable] >>  [Time-based] >> http://www.programmallp.it/index.php?id_cnt=678
+     [Clear] >> [Error-based] >> https://evcppk.ru/article.php?id=140
+[Vulnerable] >>  [Time-based] >> https://evcppk.ru/article.php?id=140
+[Vulnerable] >> [Error-based] >> http://www.layayoga.ru/index.php?id=1/
+[Vulnerable] >>  [Time-based] >> http://www.layayoga.ru/index.php?id=1/
