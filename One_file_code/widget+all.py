@@ -227,7 +227,10 @@ def scan_sql_injection(url: str) -> False or str or None:
         print("[!] Trying", new_url)
 
         # Делаем HTTP запрос
-        res = s.get(new_url)
+        try:
+            res = s.get(new_url)
+        except:
+            return False
         if is_vulnerable(res):
             # Если словили ошибку, значит SQLI допустима -> дальнейшие проверки не требуются,
             print("[+] SQL Injection vulnerability detected, link:", new_url)
