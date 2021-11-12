@@ -124,7 +124,7 @@ def is_vulnerable(response: requests.models.Response) -> bool:
     return False
 
 
-def scan_sql_injection(url: str) -> None or str:
+def scan_sql_injection(url: str) -> False or str or None:
     """
     Основная функция, осуществляющая вызов проверки SQLI по самому URL и его формам при необходимости.
 
@@ -193,12 +193,14 @@ def scan_sql_injection(url: str) -> None or str:
 
             # Задержка оправки пакетов
             time.sleep(0.2)
+    return False
 
 
+# Тестовый вывод с тестовым пулом, работает только в рамках самостоятельного запуска модуля.
 if __name__ == "__main__":
     url_list = ["https://evcppk.ru/article.php?id=140", "http://alvet.ru/v_article.php?id=35",
                 "http://www.sfgames.ru/gameS.php?id=284",
-                 "http://dveromania.ru/furnitura/bronenakladki",
+                "http://dveromania.ru/furnitura/bronenakladki",
                 "http://www.layayoga.ru/index.php?id=1/",
                 "http://mstinfo.ru/catalog/dog.php?id=4234&screen=4&userif=2"
                 ]

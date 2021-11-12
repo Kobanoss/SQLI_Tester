@@ -1,0 +1,4 @@
+[Vulnerable] >> [Error-based] >> http://testphp.vulnweb.com/artists.php?artist=1
+[Vulnerable] >>  [Time-based] >> http://testphp.vulnweb.com/artists.php?artist=1
+[Vulnerable] >> [Error-based] >> http://testphp.vulnweb.com/artists.php?artist=1
+[Vulnerable] >>  [Time-based] >> http://testphp.vulnweb.com/artists.php?artist=1
