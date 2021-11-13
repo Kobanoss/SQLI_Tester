@@ -1,0 +1,18 @@
+[URL Уязвим] >> [Ошибку вызвал знак < \ >] >> http://www.programmallp.it/index.php?id_cnt=678
+[URL Уязвим] >> [Ошибку вызвал знак < \ >] >> http://testphp.vulnweb.com/artists.php?artist=1
+[URL Уязвим] >> [Ошибку вызвал знак < \ >] >> http://testphp.vulnweb.com/artists.php?artist=1
+[URL Уязвим] >> [Ошибку вызвал знак < \ >] >> http://www.programmallp.it/index.php?id_cnt=678
+  [URL Чист] >>      [Задержка отсутсвует] >> https://evcppk.ru/article.php?id=140
+  [URL Чист] >>      [Задержка отсутсвует] >> http://mstinfo.ru/catalog/dog.php?id=4234&screen=4&userif=2
+  [URL Чист] >>      [Задержка отсутсвует] >> https://evcppk.ru/article.php?id=140
+  [URL Чист] >>      [Задержка отсутсвует] >> https://evcppk.ru/article.php?id=140
+  [URL Чист] >>      [Задержка отсутсвует] >> https://evcppk.ru/article.php?id=140
+  [URL Чист] >>      [Задержка отсутсвует] >> http://evcppk.ru/article.php?id=140
+[URL Уязвим] >> [Ошибку вызвал знак < \ >] >> http://testphp.vulnweb.com/artists.php?artist=1
+[URL Уязвим] >> [Ошибку вызвал знак < \ >] >> http://www.programmallp.it/index.php?id_cnt=678
+[URL Уязвим] >> [Ошибку вызвал знак < \ >] >> http://testphp.vulnweb.com/artists.php?artist=1
+[URL Уязвим] >> [Ошибку вызвал знак < \ >] >> http://www.programmallp.it/index.php?id_cnt=678
+  [URL Чист] >>      [Задержка отсутсвует] >> http://evcppk.ru/article.php?id=140
+[URL Уязвим] >> [Ошибку вызвал знак < \ >] >> http://www.sfgames.ru/gameS.php?id=284
+[URL Уязвим] >> [Ошибку вызвал знак < \ >] >> http://testphp.vulnweb.com/artists.php?artist=1
+[URL Уязвим] >>        [Получена задержка] >> http://testphp.vulnweb.com/artists.php?artist=1

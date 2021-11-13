@@ -1,4 +1,6 @@
-[URL Уязвим] >> http://testphp.vulnweb.com/artists.php?artist=1
-[URL Уязвим] >> http://www.programmallp.it/index.php?id_cnt=678
-[URL Уязвим] >> http://www.programmallp.it/index.php?id_cnt=678
-[URL Уязвим] >> http://testphp.vulnweb.com/artists.php?artist=1
+[URL Уязвим] >> [Ошибку вызвал знак < \ >] >> http://testphp.vulnweb.com/artists.php?artist=1
+  [URL Чист] >>        [Ошибка отсутсвует] >> http://mstinfo.ru/catalog/dog.php?id=4234&screen=4&userif=2
+[URL Уязвим] >> [Ошибку вызвал знак < ' >] >> http://www.layayoga.ru/index.php?id=1/
+[URL Уязвим] >> [Ошибку вызвал знак < \ >] >> http://testphp.vulnweb.com/artists.php?artist=1
+[URL Уязвим] >> [Ошибку вызвал знак < ' >] >> http://www.layayoga.ru/index.php?id=1/
+  [URL Чист] >>       [Ошибка отсутствует] >> http://dveromania.ru/furnitura/bronenakladki
